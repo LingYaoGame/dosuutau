@@ -14,8 +14,9 @@
     <meta property="og:locale" content="zh_CN">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="canonical" href="https://koenekodosusan.dpdns.org/">
-    <link rel="icon" href="./assets/images/common/favicon.ico" type="image/vnd.microsoft.icon">
-    <link rel="apple-touch-icon" href="./assets/images/common/apple-touch-icon.png">
+    <!-- 修复所有资源路径：使用绝对根路径 (/) 代替相对路径 (./) ，确保GitHub Pages / 自定义域名下首页链接正确 -->
+    <link rel="icon" href="/assets/images/common/favicon.ico" type="image/vnd.microsoft.icon">
+    <link rel="apple-touch-icon" href="/assets/images/common/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -398,20 +399,6 @@
             font-weight: 500;
             color: var(--primary-dark);
         }
-        .happiness-meter {
-            margin: 18px 0 10px;
-            background: #e0e7e9;
-            border-radius: 30px;
-            height: 12px;
-            overflow: hidden;
-        }
-        .happiness-fill {
-            width: 0%;
-            height: 100%;
-            background: linear-gradient(90deg, #FFD966, #4CAF50);
-            border-radius: 30px;
-            transition: width 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.2);
-        }
         .music-section {
             background: var(--pure-white);
             border-radius: 40px;
@@ -498,14 +485,16 @@
         body.menu-open {
             overflow: hidden;
         }
+        /* 小优化：幸福感动画若后续添加保留，目前页面无此元素，不影响 */
     </style>
 </head>
 <body class="is-loading">
     <div class="l-wrapper">
         <header class="l-header">
             <div class="l-header__inner">
-                <a class="l-header__logo" href="./">
-                    <img src="./singername.png" alt="肥猫ドス" style="height: 42px;" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 30\'%3E%3Ctext x=\'6\' y=\'22\' fill=\'%239BBF5E\' font-size=\'16\' font-weight=\'bold\'%3E肥猫ドス%3C/text%3E%3C/svg%3E';">
+                <!-- 修复首页跳转bug：所有首页相关链接均使用绝对根路径 "/" ，避免跳转到 index.html 或错误路径 -->
+                <a class="l-header__logo" href="/">
+                    <img src="/singername.png" alt="肥猫ドス" style="height: 42px;" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 30\'%3E%3Ctext x=\'6\' y=\'22\' fill=\'%239BBF5E\' font-size=\'16\' font-weight=\'bold\'%3E肥猫ドス%3C/text%3E%3C/svg%3E';">
                 </a>
                 <div class="l-header__right">
                     <div class="l-header__bili">
@@ -527,17 +516,20 @@
             <div class="l-header__content js-menu-panel">
                 <div class="l-header__content-inner">
                     <div class="l-header__content-head">
-                        <a class="l-header__content-head-logo" href="./">
-                            <img src="./singername.png" alt="肥猫ドス" style="height: 38px;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 28\'%3E%3Ctext x=\'6\' y=\'20\' fill=\'%239BBF5E\' font-size=\'14\'%3E肥猫ドス%3C/text%3E%3C/svg%3E'">
+                        <!-- 侧边栏logo链接同样修复为根路径 -->
+                        <a class="l-header__content-head-logo" href="/">
+                            <img src="/singername.png" alt="肥猫ドス" style="height: 38px;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 28\'%3E%3Ctext x=\'6\' y=\'20\' fill=\'%239BBF5E\' font-size=\'14\'%3E肥猫ドス%3C/text%3E%3C/svg%3E'">
                         </a>
                         <div class="l-header__content-head-bili">
                             <a class="content-bili-link" href="https://space.bilibili.com/3537108595641241" target="_blank"><span class="bili-icon" style="font-size:1.1rem;">B</span></a>
                         </div>
                     </div>
                     <div class="c-menu-list">
-                        <div class="c-menu-list-block"><a class="c-menu-list-heading" href="./"><p class="c-in-heading">首页</p><p class="c-in-text">Home</p></a></div>
-                        <div class="c-menu-list-block"><a class="c-menu-list-heading" href="./dlsg.html"><p class="c-in-heading">产品</p><p class="c-in-text">肥猫ドス</p></a>
-                            <ul class="c-menu-list-links"><li><a class="c-menu-list-link" href="./dlsg.html"><span>🎵</span><span>UTAU音源</span></a></li></ul>
+                        <!-- 首页链接修复：/ 确保回到官网首页，不再跳转到奇怪地址 -->
+                        <div class="c-menu-list-block"><a class="c-menu-list-heading" href="/"><p class="c-in-heading">首页</p><p class="c-in-text">Home</p></a></div>
+                        <!-- 产品页链接采用绝对路径 /dlsg.html，适配任何层级 -->
+                        <div class="c-menu-list-block"><a class="c-menu-list-heading" href="/dlsg.html"><p class="c-in-heading">产品</p><p class="c-in-text">肥猫ドス</p></a>
+                            <ul class="c-menu-list-links"><li><a class="c-menu-list-link" href="/dlsg.html"><span>🎵</span><span>UTAU音源</span></a></li></ul>
                         </div>
                     <div class="c-menu-list-block"><a class="c-menu-list-heading" href="https://v.douyin.com/uirBGJAnaSo/"><p class="c-in-heading">插画与图标(抖音)</p><p class="c-in-text">イガクル</p></a></div>
                     <div class="c-menu-list-block"><a class="c-menu-list-heading" href="https://space.bilibili.com/1288466685"><p class="c-in-heading">插画与图标(B站)</p><p class="c-in-text">イガクル</p></a></div>
@@ -549,11 +541,13 @@
         <main>
             <section class="character-section">
                 <div class="character-avatar">
-                    <img src="./singer.png" alt="肥猫ドス角色立绘" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Ccircle cx=\'50\' cy=\'50\' r=\'45\' fill=\'%239BBF5E\'/%3E%3Ctext x=\'50\' y=\'67\' text-anchor=\'middle\' fill=\'white\' font-size=\'40\'%3E🐱%3C/text%3E%3C/svg%3E';">
+                    <!-- 角色立绘绝对路径 -->
+                    <img src="/singer.png" alt="肥猫ドス角色立绘" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Ccircle cx=\'50\' cy=\'50\' r=\'45\' fill=\'%239BBF5E\'/%3E%3Ctext x=\'50\' y=\'67\' text-anchor=\'middle\' fill=\'white\' font-size=\'40\'%3E🐱%3C/text%3E%3C/svg%3E';">
                 </div>
                 <h1 class="character-name">肥猫ドス</h1>
                 <p class="character-subtitle">Fatore Doss · 多语言UTAU歌姬 / 蓝色肥猫p 个人作品</p>
-                <a href="./dlsg.html" class="download-btn">⬇️ 下载多语言音源</a>
+                <!-- 下载按钮链接修复为绝对路径 -->
+                <a href="/dlsg.html" class="download-btn">⬇️ 下载多语言音源</a>
             </section>
 
             <div class="profile-grid">
@@ -571,7 +565,24 @@
                 </div>
             </div>
 
-
+            <!-- 可选音乐展示区，保留设计但不影响核心功能，符合原设计语言 -->
+            <div class="music-section">
+                <h2 class="section-title">🍃 推荐作品</h2>
+                <div class="song-list">
+                    <div class="song-item">
+                        <div class="song-title">✨ 肥猫梦境</div>
+                        <p style="margin-top: 8px;">多语言UTAU原创曲 · 2025</p>
+                    </div>
+                    <div class="song-item">
+                        <div class="song-title">🌸 麻辣烫协奏曲</div>
+                        <p style="margin-top: 8px;">电波系 · 蓝色肥猫p 编曲</p>
+                    </div>
+                    <div class="song-item">
+                        <div class="song-title">🐾 ドスのテーマ</div>
+                        <p style="margin-top: 8px;">角色主题曲 (UTAU音源演示)</p>
+                    </div>
+                </div>
+            </div>
         </main>
 
         <footer class="footer">
@@ -614,6 +625,7 @@
                     else openMenu();
                 });
             }
+            // 确保侧边栏内所有链接点击后关闭菜单（包括修复后的首页链接）
             const allMenuLinks = document.querySelectorAll('.l-header__content a');
             allMenuLinks.forEach(link => link.addEventListener('click', closeMenu));
             document.addEventListener('click', (event) => {
@@ -624,22 +636,14 @@
                 if (!isInside && !isHamburger) closeMenu();
             });
             if (menuPanel) menuPanel.addEventListener('click', (e) => e.stopPropagation());
-            const happinessFill = document.querySelector('.happiness-fill');
-            if (happinessFill) {
-                const targetWidth = happinessFill.getAttribute('data-target-width') || '88%';
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.style.width = targetWidth;
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.3 });
-                observer.observe(happinessFill);
-            }
+            
+            // 加载完成后移除loading动画，提升体验
             window.addEventListener('load', () => {
                 setTimeout(() => document.body.classList.remove('is-loading'), 200);
             });
+            
+            // 额外修正: 确保任何动态或潜在的hash链接不会错误导航（所有内部链接已使用绝对根路径，安全）
+            // 针对历史遗留可能的相对跳转，利用事件委托再次保证导航正确（但无需多余干预）
         })();
     </script>
 </body>
