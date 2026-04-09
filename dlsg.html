@@ -3,19 +3,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2, user-scalable=yes">
-    <title>肥猫ドス | 蓝色肥猫p 官方站点</title>
+    <title>肥猫ドス | 蓝色肥猫p 官方站点 · 音源下载</title>
     <meta name="description" content="蓝色肥猫p 个人社团「肥猫ドス」官方网站。多语言UTAU音源配布、角色设定与原创音乐。">
     <meta property="og:url" content="https://koenekodosusan.dpdns.org/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="肥猫ドス | 蓝色肥猫p 官方站">
+    <meta property="og:title" content="肥猫ドス | 蓝色肥猫p 官方站 · 音源下载">
     <meta property="og:site_name" content="蓝色肥猫p · 肥猫ドス官网">
     <meta property="og:description" content="肥猫ドス的官方站点。提供多语言UTAU音源下载、角色故事与原创音乐。">
     <meta property="og:image" content="https://koenekodosusan.dpdns.org/">
     <meta property="og:locale" content="zh_CN">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="canonical" href="https://koenekodosusan.dpdns.org/">
-    <link rel="icon" href="./assets/images/common/favicon.ico" type="image/vnd.microsoft.icon">
-    <link rel="apple-touch-icon" href="./assets/images/common/apple-touch-icon.png">
+    <!-- 修复资源路径：使用绝对根路径，适配 GitHub Pages 及自定义域名 -->
+    <link rel="icon" href="/assets/images/common/favicon.ico" type="image/vnd.microsoft.icon">
+    <link rel="apple-touch-icon" href="/assets/images/common/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -544,8 +545,9 @@
 <div class="l-wrapper">
     <header class="l-header">
         <div class="l-header__inner">
-            <a class="l-header__logo" href="./">
-                <img src="/dosuutau/singername.png" alt="肥猫ドス" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 30\'%3E%3Ctext x=\'6\' y=\'22\' fill=\'%239BBF5E\' font-size=\'16\' font-weight=\'bold\'%3E肥猫ドス%3C/text%3E%3C/svg%3E';">
+            <!-- 修复：Logo链接使用绝对根路径 '/'，确保返回官网首页 -->
+            <a class="l-header__logo" href="/">
+                <img src="/singername.png" alt="肥猫ドス" style="height: 42px;" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 30\'%3E%3Ctext x=\'6\' y=\'22\' fill=\'%239BBF5E\' font-size=\'16\' font-weight=\'bold\'%3E肥猫ドス%3C/text%3E%3C/svg%3E';">
             </a>
             <div class="l-header__right">
                 <div class="l-header__bili">
@@ -567,17 +569,19 @@
         <div class="l-header__content js-menu-panel">
             <div class="l-header__content-inner">
                 <div class="l-header__content-head">
-                    <a class="l-header__content-head-logo" href="./">
-                        <img src="/dosuutau/singername.png" alt="肥猫ドス" style="height: 38px;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 28\'%3E%3Ctext x=\'6\' y=\'20\' fill=\'%239BBF5E\' font-size=\'14\'%3E肥猫ドス%3C/text%3E%3C/svg%3E'">
+                    <!-- 侧边栏Logo链接同样修复为根路径 -->
+                    <a class="l-header__content-head-logo" href="/">
+                        <img src="/singername.png" alt="肥猫ドス" style="height: 38px;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 28\'%3E%3Ctext x=\'6\' y=\'20\' fill=\'%239BBF5E\' font-size=\'14\'%3E肥猫ドス%3C/text%3E%3C/svg%3E'">
                     </a>
                     <div class="l-header__content-head-bili">
                         <a class="content-bili-link" href="https://space.bilibili.com/3537108595641241" target="_blank"><span class="bili-icon" style="font-size:1.1rem;">B</span></a>
                     </div>
                 </div>
                 <div class="c-menu-list">
-                    <div class="c-menu-list-block"><a class="c-menu-list-heading" href="/dosuutau/index.html"><p class="c-in-heading">首页</p><p class="c-in-text">Home</p></a></div>
-                    <div class="c-menu-list-block"><a class="c-menu-list-heading" href="/dosuutau/dlsg.html"><p class="c-in-heading">产品</p><p class="c-in-text">肥猫ドス</p></a>
-                        <ul class="c-menu-list-links"><li><a class="c-menu-list-link" href="/dosuutau/dlsg.html"><span>🎵</span><span>UTAU音源</span></a></li></ul>
+                    <!-- 修复所有导航链接：首页指向根，产品指向 /dlsg.html，不再出现子目录前缀 -->
+                    <div class="c-menu-list-block"><a class="c-menu-list-heading" href="/"><p class="c-in-heading">首页</p><p class="c-in-text">Home</p></a></div>
+                    <div class="c-menu-list-block"><a class="c-menu-list-heading" href="/dlsg.html"><p class="c-in-heading">产品</p><p class="c-in-text">肥猫ドス</p></a>
+                        <ul class="c-menu-list-links"><li><a class="c-menu-list-link" href="/dlsg.html"><span>🎵</span><span>UTAU音源</span></a></li></ul>
                     </div>
                     <div class="c-menu-list-block"><a class="c-menu-list-heading" href="https://v.douyin.com/uirBGJAnaSo/"><p class="c-in-heading">插画与图标(抖音)</p><p class="c-in-text">イガクル</p></a></div>
                     <div class="c-menu-list-block"><a class="c-menu-list-heading" href="https://space.bilibili.com/1288466685"><p class="c-in-heading">插画与图标(B站)</p><p class="c-in-text">イガクル</p></a></div>
@@ -624,20 +628,19 @@
                 <div class="dropdown-container" id="jp-dropdown">
                     <button class="lang-trigger" data-lang="jp">🇯🇵 日语</button>
                     <div class="dropdown-menu" id="jp-menu">
-                        <a href="https://bowlroll.net/file/351703" target="_blank">📦 Bowlroll 下载 (CVVC)</a>
+                        <a href="https://bowlroll.net/file/351703" target="_blank" rel="noopener noreferrer">📦 Bowlroll 下载 (CVVC)</a>
                     </div>
                 </div>
                 <div class="dropdown-container" id="cn-dropdown">
                     <button class="lang-trigger" data-lang="cn">🇨🇳 中文</button>
                     <div class="dropdown-menu" id="cn-menu">
-                        <a href="https://bowlroll.net/file/351702" target="_blank">📦 Bowlroll 下载 (CVV)</a>
+                        <a href="https://bowlroll.net/file/351702" target="_blank" rel="noopener noreferrer">📦 Bowlroll 下载 (CVV)</a>
                     </div>
                 </div>
                 <div class="dropdown-container" id="en-dropdown">
                     <button class="lang-trigger" data-lang="en">🇬🇧 English</button>
                     <div class="dropdown-menu" id="en-menu">
-                        <a href="https://bowlroll.net/file/351701" target="_blank">📦 VCCV 版本 (推荐)</a>
-                        <!-- <a href="https://bowlroll.net/file/351456_delta" target="_blank">📦 DELTA 版本 (高表现力)</a> -->
+                        <a href="https://bowlroll.net/file/351701" target="_blank" rel="noopener noreferrer">📦 VCCV 版本 (推荐)</a>
                     </div>
                 </div>
             </div>
